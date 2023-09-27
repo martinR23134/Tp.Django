@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'core/css/E-commercepaginaprincipal.css' %}>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0cd4d38be2.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+</head>
+
+<body>
+
+ 
+  
+      
+
+    <!-- formulario de contacto -->
+
+    <div class="form_container" id="miElemento">
+        <i id="miBoton" class="fa-solid fa-circle-xmark closeBtn"></i>
+        <div class="form logo_form">
+            <form action="#">
+                <h2>Ingresar</h2>
+
+                <div class="input_box">
+                    <input type="gmail" placeholder="Gamail">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" placeholder="Contraseña">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+
+                <button class="button">Entrar</button>
+
+              
+            </form>
+
+        </div>
+
+    </div> 
+
+    <!-- formulario de contacto 2 -->
+
+    <div class="form_container" id="miElemento2">
+        <i id="miElemento3" class="fa-solid fa-circle-xmark closeBtn"></i>
+        <div class="form logo_form">
+            <form action="#">
+                <h2>Registro</h2>
+
+                <div class="input_box">
+                    <input type="name" placeholder="Nombre y apellido">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="input_box">
+                    <input type="gmail" placeholder="Email">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" placeholder="Contraseña">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" placeholder="Repita la contraseña">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+
+                <button class="button">Registrarse</button>
+
+              
+            </form>
+
+        </div>
+
+    </div> 
+ 
+    <!-- menu hamburguesa  -->
+
+  
+        <div class="barra">
+            <h2>Menu</h2>
+            
+            <ul>
+                <li><a href="{% url 'electronico' %}">celulares</a></li>
+                <li><a href="{% url 'indumentaria' %}">Ropa</a></li>
+                <li><a href="{% url 'videojuegos' %}">Entretenimiento</a></li>
+                <li><a href="{% url 'hogar' %}">Decoración</a></li>
+            </ul>
+           
+        </div> 
+
+    
+
+
+  <!-- menu barra -->
+
+  
+    <nav class="navbar">
+        <div class="navegacion">
+            <div class="open-menu" id="open">
+                <span class="open-close" id="close"><i class="fa-solid fa-bars"></i></span>
+            </div>
+           
+            <div class="logo">
+                
+                    <img src={% static 'core/img/logo.png' %} alt="" class="logo">
+               
+            </div>
+            <div class="buscador">
+                <input type="text" placeholder="Buscar...">
+                <button class="boton-buscador"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <ul class="login">
+                <li>
+                    <a  href="https://www.google.com/maps/place/Go!+Digital+Ecommerce/@-34.5626228,-58.7582731,10.25z/data=!4m10!1m2!2m1!1secommerce+buenos+aires!3m6!1s0x95bcb59a1e2f82f9:0x88927581ed534385!8m2!3d-34.5896201!4d-58.425941!15sChZlY29tbWVyY2UgYnVlbm9zIGFpcmVzkgESZV9jb21tZXJjZV9zZXJ2aWNl4AEA!16s%2Fg%2F11ptnh89gv?entry=ttu">
+                       <i class="fa-solid fa-location-dot"></i>
+                       <span>Tiendas</span>
+                    </a>
+                  
+                </li>
+                <li><button class="boton-blanco" id="form-open">Ingresar</button></li>
+                <li><button class="boton-negro" id="miBoton2">Registrarse</button></li>
+                <li>
+                    <a href="{% url 'formulario_de_pago' %}">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Carrito</span>
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+     
+        
+        <div id="side-menu" class="menu-slide">
+            <a href="" class="btn-close" onclick="CloseSlideMenu()"></a>
+            <a href="">Productos</a>
+            <a href="">Productos</a>
+            <a href="">Productos</a>
+            <a href="">Productos</a>
+        </div>
+
+<script>
+
+    function OpenSlideMenu(){
+        document.getElementById('side-menu').style.width ='250px';
+        document.getElementById('main').style.marginleft ='250px';
+    }
+
+    function CloseSlideMenu(){
+        document.getElementById('side-menu').style.width ='0';
+        document.getElementById('main').style.marginleft ='0';
+    }
+    
+</script> 
+
+
+
+<nav class="botones-abajo">
+    
+    <div class="abajo">
+        <a href="{% url 'ofertas' %}"><button class="boton-negro">Ofertas</button></a>
+        <a href="{% url 'deporte' %}"><button class="boton-negro">Deporte</button></a>
+        <a href="{% url 'mascotas' %}"><button class="boton-negro">Mascotas</button></a>
+        <a href="{% url 'juguetes' %}"><button class="boton-negro">Juguetes</button></a>
+        <a href="{% url 'computadoras' %}"><button class="boton-negro">Computadoras</button></a>
+    </div>
+
+
+</nav>
+
+
+<!-- Body Slider -->
+
+
+<section>
+    <div class="imagen-contenedor">
+        <div class="imagen-Lista">
+            <div class="imagen-item">
+                <img src={% static 'core/img/pexels-huseyn-kamaladdin-667838.jpg' %} alt="">
+            </div>
+            <div class="imagen-item">
+                <img src={% static 'core/img/pexels-max-rahubovskiy-6438760.jpg' %} alt="">
+            </div>
+           
+        </div>
+
+        <div class="imagen-btn-container">
+            <button class="slider-btn" id="slider-btn-left"><i class="fa-solid fa-angles-left"></i></button>
+            <button class="slider-btn" id="slider-btn-right"><i class="fa-solid fa-angles-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- producto contenedor -->
+
+<section class="products">
+    <div class="columns">
+        <div class="column">
+          
+            <a href="{% url 'hogar' %}" ><div class="product">
+                <h2>Hogar</h2>
+                <img src={% static 'core/img/diseno-maqueta-marco-fotos_23-2149850350.jpg' %} alt="">
+                <a href="{% url 'hogar' %}"  class="link">Compra ahora</a>
+            
+            </div></a>
+
+           <a href="{% url 'computadoras' %}"> <div class="product">
+                <h2>Computadoras</h2>
+                <img src={% static 'core/img/cerca-maqueta-portatil-flotante_308775-6 (1).jpg' %} alt="">
+                <a href="{% url 'computadoras' %}"  class="link">Compra ahora</a>
+            
+            </div></a>
+
+            <a href="{% url 'cuidado_personal' %}" ><div class="product">
+                <h2>Cuidado Personal</h2>
+                <img src={% static 'core/img/cosmeticos-superficie-colorida-moderna.jpg' %} alt="">
+                <a href="{% url 'cuidado_personal' %}"  class="link">Compra ahora</a>
+            
+            </div></a>
+
+        </div>
+        <div class="column">
+
+            <a href="{% url 'indumentaria' %}" ><div class="product">
+                <h2>Indumentaria</h2>
+                <img src={% static 'core/img/moda-rapida-vs-moda-lenta-sostenible.jpg' %} alt="">
+                <a href="{% url 'indumentaria' %}"  class="link">Compra ahora</a>
+          
+            </div>  </a>
+
+            <a href="{% url 'deporte' %}" ><div class="product">
+                <h2>Deporte</h2>
+                <img src={% static 'core/img/tecnologia-deporte.jpg' %} alt="">
+                <a href="{% url 'deporte' %}"  class="link">Compra ahora</a>
+            
+            </div></a>
+
+            <a href="{% url 'videojuegos' %}" ><div class="product">
+                <h2>Video juegos</h2>
+                <img src={% static 'core/img/54TDYNQK7ZIXZGIWJ7ICAV4U4E.jpg' %} alt="">
+                <a href="{% url 'videojuegos' %}"  class="link">Compra ahora</a>
+            
+            </div></a>
+
+        </div>
+        <div class="column">
+
+            <a href="{% url 'jardineria' %}" ><div class="product">
+                <h2>Jardineria</h2>
+                <img src={% static 'core/img/macetas-herramientas-angulo.jpg' %} alt="">
+                <a href="{% url 'jardineria' %}"  class="link">Compra ahora</a>
+            
+            </div> </a>
+
+            <a href="{% url 'repuestos_autos' %}" > <div class="product">
+                <h2>Repuestos de autos</h2>
+                <img src={% static 'core/img/accesorios-coche-espacio-copia.jpg' %} alt="">
+                <a href="{% url 'repuestos_autos' %}"  class="link">Compra ahora</a>
+            
+            </div> </a>
+
+            <a href="{% url 'ofertas' %}" >  <div class="product">
+                <h2>Ofertas</h2>
+                <img src={% static 'core/img/promo-oferta-150525.jpg' %} alt="">
+                <a href="{% url 'ofertas' %}"  class="link">Compra ahora</a>
+            
+            </div> </a>
+
+        </div>
+        <div class="column">
+
+            <a href="{% url 'electronico' %}" ><div class="product">
+                <h2>Electronico</h2>
+                <img src={% static 'core/img/computadora-portatil-boligrafos-telefono-nota-pantalla-blanco-mesa.jpg' %} alt="">
+                <a href="{% url 'electronico' %}"  class="link">Compra ahora</a>
+          
+            </div> </a>
+
+            <a href="{% url 'mascotas' %}" ><div class="product">
+                <h2>Mascotas</h2>
+                <img src={% static 'core/img/istockphoto-1306543850-612x612.jpg' %} alt="">
+                <a href="{% url 'mascotas' %}"  class="link">Compra ahora</a>
+           
+            </div> </a>
+
+            <a href="{% url 'juguetes' %}" ><div class="product">
+                <h2>Juguetes</h2>
+                <img src={% static 'core/img/textura-juguete-esponjoso-cerca_23-2149686908.jpg' %} alt="">
+                <a href="{% url 'juguetes' %}"  class="link">Compra ahora</a>
+           
+            </div> </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- API   -->
+
+
+
+<section class="APIproductos">
+
+<div class="container">
+    <!-- <div class="box">
+        <img src="" alt="">
+        <p id="title">Mobile</p>
+    </div> -->
+</div>
+
+</section>
+
+
+<section class="footer">
+    <div class="social-bar">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+    <span></span>
+</section>
+
+  
+
+
+
+<script src={% static 'core/js/E-commercepaginaprincipal.js' %}></script>
+</body>
+</html>
+
+
+
+
+

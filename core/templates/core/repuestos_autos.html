@@ -1,0 +1,197 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block titulo %} Productos2 {% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'core/css/E-commerce-Repuestos-de-autos.CSS' %}">
+{% endblock %}
+{% block content %}
+
+
+
+<section>
+
+    <div class="container-title">Repuestos de autos.</div>
+
+</section>
+
+    
+    
+    <main>
+
+        <div class="container-img">
+            
+            <img src={% static 'core/img/D_NQ_NP_775691-MLA53885710637_022023-O.jpg' %} alt="Imagen producto">
+        </div>
+        <div class="container-info-producto">
+            <div class="container-price">
+                <span>$125,99</span>
+                <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="container-detain-productos">
+                <div class="foem-grup">
+                    <label for="colour">Color</label>
+                    <select name="colour" id="colour">
+                        <option disabled selected value=""> Juego Tasas </option>
+                        <option value="Verde">Negras</option>
+                        <option value="Marron">Grises</option>
+                        
+                    </select>
+                </div>
+                <button class="btn-clean">Limpiar</button>
+            </div>
+
+            <div class="container-add-cart">
+
+                <div class="container-quantity">
+
+                    <input type="number" 
+                    placeholder="1" 
+                    value="1" 
+                    min="1" 
+                    class="input-quantity"
+                    />
+
+                    <div class="btn-increment-decrement">
+                        <i class="fa-solid fa-chevron-up" id="increment"></i>
+                        <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                    </div>
+                </div>
+                <button class="btn-add-to-cart">
+                    <i class="fa-solid fa-plus"></i>
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="container-description">
+
+                <div class="title-description">
+
+                    <h4>Descripción</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-description ">
+
+                    <h3>Juego Tasas Rueda Peugeot 207 Y 206 14 PuLG.</h3>
+                    <br>
+
+                        <p>
+                            Juego Tazas Rueda Peugeot 207 206 14 Pulgadas Con Logo Gris <br>
+                            - Precio por 4 unidadES. <br>
+                            - Incluye logo.<br>
+                            - Producto alternativo. Industria nacional<br>
+                            - Taza de 14" pulgadas<br>
+                            - Ajuste a presión.<br>
+                            - Consulte por demás repuestos y accesorios para su vehículo.
+                    </p>
+                </div>
+            </div>
+            <div class="container-addictional-information">
+                <div class="title-additional-information">
+
+                    <h4>Información adicional</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-addictional-information " >
+                    <p> -Ofrecemos entrega inmediata en nuestro depósito en Paternal. <br>
+                        -Mercado Envíos, y Mercado Envíos Flex. <br>
+                        -Entrega Same Day en CABA y GBA comprando antes de las 13hs.
+                    </p>
+                </div>
+            </div>
+            <div class="container-reviews">
+                <div class="title-reviews">
+
+                    <h4>Reseñas</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-reviews hidden">
+                    <p> ----------------
+                    </p>
+                </div>
+            </div>
+            <div class="container-social">
+                <span>Compartir</span>
+                <div class="container-buttons-social">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="container-related-products">
+        <h2>Productos Relacionados</h2>
+        <div class="card-list-products">
+            <div class="card">
+                <div class="card-img">
+                    <img src={% static 'core/img/D_NQ_NP_721924-MLA49898700836_052022-O.jpg' %} alt="Producto-1">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Taza Rodado 14 Auto Universal Daytona</h3>
+                        
+                        <p class="category">
+                            Repuestos
+                        </p>
+                    </div>
+                    <div class="price">$225,99 <i class="fa-solid fa-tag"></i></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src={% static 'core/img/D_NQ_NP_673979-MLA51427498477_092022-O.jpg' %} alt="Producto-2">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Juego 4 Tazas Negra Mate Universal Rodado 14</h3>
+                        
+                        <p class="category">
+                            Repuestos
+                        </p>
+                    </div>
+                    <div class="price">$357,99 <i class="fa-solid fa-tag"></i></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src={% static 'core/img/D_NQ_NP_722516-MLA51061702339_082022-O.jpg' %} alt="Producto-3">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Juego X4 Tasas Volkswagen Gol Trend 2016</h3>
+                        
+                        <p class="category">
+                            Repuestos
+                        </p>
+                    </div>
+                    <div class="price">$245,99 <i class="fa-solid fa-tag"></i></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src={% static 'core/img/D_NQ_NP_714887-MLA50709757004_072022-O.jpg' %} alt="Producto-4">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Tasa Rueda Peugeot 207 Y 206 14 PuLG Gris</h3>
+                       
+                        <p class="category">
+                            Repuestos
+                        </p>
+                    </div>
+                    <div class="price">$125,99 <i class="fa-solid fa-tag"></i></div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+{% endblock %}

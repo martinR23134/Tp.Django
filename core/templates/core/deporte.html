@@ -1,0 +1,199 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block titulo %} Productos2 {% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'core/css/E-commerce-Deporte.CSS' %}">
+{% endblock %}
+{% block content %}
+
+
+
+<section>
+
+    <div class="container-title">Pesas.</div>
+
+</section>
+
+    
+    
+    <main>
+
+        <div class="container-img">
+            
+            <img src={% static 'core/img/D_NQ_NP_780600-MLA51811641970_102022-O.jpg' %} alt="Imagen producto">
+        </div>
+        <div class="container-info-producto">
+            <div class="container-price">
+                <span>$35,99</span>
+                <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="container-detain-productos">
+                <div class="foem-grup">
+                    <label for="colour">Color</label>
+                    <select name="colour" id="colour">
+                        <option disabled selected value=""> Mancuerna </option>
+                        <option value="Verde">Negras</option>
+                        <option value="Marron">Grises</option>
+                    </select>
+                </div>
+                <button class="btn-clean">Limpiar</button>
+            </div>
+
+            <div class="container-add-cart">
+
+                <div class="container-quantity">
+
+                    <input type="number" 
+                    placeholder="1" 
+                    value="1" 
+                    min="1" 
+                    class="input-quantity"
+                    />
+
+                    <div class="btn-increment-decrement">
+                        <i class="fa-solid fa-chevron-up" id="increment"></i>
+                        <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                    </div>
+                </div>
+                <button class="btn-add-to-cart">
+                    <i class="fa-solid fa-plus"></i>
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="container-description">
+
+                <div class="title-description">
+
+                    <h4>Descripción</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-description ">
+
+                    <h3>Mancuerna Pesa Pvc Rellena Premium 5 Kg .</h3>
+                    <br>
+
+                        <p>
+                            Presentación: 5 Kg. <br>
+
+El principal beneficio de las mancuernas hexagonales es que no ruedan; si tu piso es incluso ligeramente irregular (como lo son muchos pisos), rodar puede ser una gran molestia.
+                        
+                          Rodar también puede ser un peligro, especialmente cuando cosas pesadas ruedan sobre tus pies;
+                          por otro lado, el hecho de que las pesas hexagonales no rueden es importante si deseas hacer ciertos ejercicios de
+                          piso, como flexiones con mancuernas.
+                          Ideal para Gimnasios, clubes, hoteles y hogares.
+                          Mancuerna Hexagonal excelente calidad, recubiertas en goma de alta densidad con agarre antideslizante.
+                    </p>
+                </div>
+            </div>
+            <div class="container-addictional-information">
+                <div class="title-additional-information">
+
+                    <h4>Información adicional</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-addictional-information " >
+                    <p> -Ofrecemos entrega inmediata en nuestro depósito en Paternal. <br>
+                        -Mercado Envíos, y Mercado Envíos Flex. <br>
+                        -Entrega Same Day en CABA y GBA comprando antes de las 13hs.
+                    </p>
+                </div>
+            </div>
+            <div class="container-reviews">
+                <div class="title-reviews">
+
+                    <h4>Reseñas</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-reviews hidden">
+                    <p> ----------------
+                    </p>
+                </div>
+            </div>
+            <div class="container-social">
+                <span>Compartir</span>
+                <div class="container-buttons-social">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="container-related-products">
+        <h2>Productos Relacionados</h2>
+        <div class="card-list-products">
+            <div class="card">
+                <div class="card-img">
+                    <img src={% static 'core/img/D_NQ_NP_823145-MLA48678016705_122021-O.jpg' %} alt="Producto-1">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Pesa Mancuerna Ajustable 16 Kg Regulable</h3>
+                        
+                        <p class="category">
+                            Deporte
+                        </p>
+                    </div>
+                    <div class="price">$75,99 <i class="fa-solid fa-tag"></i></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src={% static 'core/img/D_NQ_NP_731288-MLA50091004258_052022-O.jpg' %} alt="Producto-2">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Par De Mancuerna Hexagonal Engomada 10 Kg</h3>
+                        
+                        <p class="category">
+                            Deporte
+                        </p>
+                    </div>
+                    <div class="price">$67,99 <i class="fa-solid fa-tag"></i></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src={% static 'core/img/D_NQ_NP_984014-MLA48212137698_112021-O.jpg' %} alt="Producto-3">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Mancuerna Engomada Redonda 2,5kg</h3>
+                        
+                        <p class="category">
+                            Deporte
+                        </p>
+                    </div>
+                    <div class="price">$56,99 <i class="fa-solid fa-tag"></i></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src={% static 'core/img/D_NQ_NP_935716-MLA54963411976_042023-O.jpg' %} alt="Producto-4">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Pesas Mancuernas Par 5 Kg Hexagonales Engomadas</h3>
+                       
+                        <p class="category">
+                            Deporte
+                        </p>
+                    </div>
+                    <div class="price">$43,99 <i class="fa-solid fa-tag"></i></div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+{% endblock %}

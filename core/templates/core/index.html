@@ -47,13 +47,13 @@
 
     </div> 
 
-    <!-- formulario de contacto 2 -->
+    <!-- formulario de contacto 2 
 
     <div class="form_container" id="miElemento2">
         <i id="miElemento3" class="fa-solid fa-circle-xmark closeBtn"></i>
         <div class="form logo_form">
             <form action="#">
-                <h2>Registro</h2>
+                <a href="{% url 'login' %}">  <h2>Registro</h2>  </a>
 
                 <div class="input_box">
                     <input type="name" placeholder="Nombre y apellido">
@@ -81,7 +81,7 @@
 
         </div>
 
-    </div> 
+    </div>  -->
  
     <!-- menu hamburguesa  -->
 
@@ -128,7 +128,7 @@
                   
                 </li>
                 <li><button class="boton-blanco" id="form-open">Ingresar</button></li>
-                <li><button class="boton-negro" id="miBoton2">Registrarse</button></li>
+                <li><a href="{% url 'login' %}"><button class="boton-negro" id="miBoton2">  Registrarse </button>  </a></li>
                 <li>
                     <a href="{% url 'formulario_de_pago' %}">
                         <i class="fa-solid fa-cart-shopping"></i>

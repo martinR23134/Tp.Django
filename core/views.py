@@ -1,5 +1,30 @@
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm  
+from django.contrib.auth.models import User
 from django.http import HttpResponse
+
+
+def login(request):
+    
+    if request.method == "GET":
+        print("Enviando formulario!")
+        
+        return render(request, "core/login.html",{
+        "form": UserCreationForm 
+    })
+        
+    else:
+        if request.POST["password1"] == request.POST["password1"]:
+            user = User.objects.create_user(username=request.POST["username"], password=request.POST["password1"])
+            user.save()
+            return HttpResponse("Usuario creado!")
+        return HttpResponse("La contraseña no coincide!")
+             
+       
+    
+ 
+    
+
 
 def index(request):
     return  render(request, "core/index.html")

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from .models import Categoria, Stock_item, Destacado_por_categoria
 
 
 def login(request):
@@ -153,3 +154,47 @@ def videojuegos(request):
 
 def formulario_de_pago(request):
     return render(request, "core/formulario_de_pago.html")
+
+
+def videojuegos_x_bd(request):
+    contexto = None
+#    orm_handler = Stock_item.objects.all()
+    item_destacado = Stock_item.objects.filter(pk=1)
+    items_relacionados = Stock_item.objects.exclude(pk=1)
+    contexto = { "item_destacado": item_destacado, "items_relacionados": items_relacionados }
+    return render(request, "core/videojuegos_x_bd.html", context=contexto)
+
+def stockitem_x_bd_filter_categoria(request, string_categoria):
+    contexto = None
+#    item_destacado = Destacado_por_categoria.objects.filter(categoria=unacategoria, destacado=True)
+    item_destacado = Stock_item.objects.filter(categorias=unacategoria, destacado=True)
+    items_relacionados = Stock_item.objects.filter(categorias=unacategoria)
+#    items_relacionados = items_relacionados.exclude(item_destacado=True)
+    contexto = { "item_destacado": item_destacado, "items_relacionados": items_relacionados }
+    return render(request, "core/videojuegos_x_bd.html", context=contexto)
+
+def destacado_y_relacionados_por_nro_categoria(request, nro):
+    contexto = None
+    categoria_del_nro = Categoria.objects.get(pk=nro)  # Esto es un obj Categoria, salvo Exception
+    destacado_del_nro = Destacado_por_categoria.objects.get(categoria=categoria_del_nro, destacado=True)
+    item_destacado=destacado_del_nro.stock_item
+    items_relacionados_con_destacado = Stock_item.objects.filter(categorias=categoria_del_nro)
+    items_relacionados=items_relacionados_con_destacado.exclude(pk=item_destacado.pk)
+    contexto = { "item_destacado": item_destacado, #item_destacado es un objeto Stock_item
+                "items_relacionados": items_relacionados, #items_relacionados es un queryset
+                "cat": categoria_del_nro # categoria_del_string es un objeto Categoria
+                }
+    return render(request, "core/destacado_y_relac_x_bd.html", context=contexto)
+
+def destacado_y_relacionados_por_string_categoria(request, string_categoria):
+    contexto = None
+    categoria_del_string = Categoria.objects.get(nombre=string_categoria)  # Esto es un obj Categoria, salvo Exception
+    destacado_del_string = Destacado_por_categoria.objects.get(categoria_id=categoria_del_string.pk, destacado=True)
+    item_destacado=destacado_del_string.stock_item
+    items_relacionados_con_destacado = Stock_item.objects.filter(categorias=categoria_del_string)
+    items_relacionados=items_relacionados_con_destacado.exclude(pk=item_destacado.pk)
+    contexto = { "item_destacado": item_destacado, #item_destacado es un objeto Stock_item
+                "items_relacionados": items_relacionados, #items_relacionados es un queryset
+                "cat": categoria_del_string # categoria_del_string es un objeto Categoria
+                }
+    return render(request, "core/destacado_y_relac_x_bd.html", context=contexto)

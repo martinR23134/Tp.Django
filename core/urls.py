@@ -22,4 +22,8 @@ urlpatterns = [
     path("formulario_de_pago/", views.formulario_de_pago,
          name="formulario_de_pago"),
     path("login/", views.login, name="login"),
+#    path("videojuegos_x_bd/", views.videojuegos_x_bd, name="videojuegos_x_bd"),
+#    path("videojuegos_x_bd/<int:unacategoria>/", views.stockitem_x_bd_filter_categoria, name="videojuegos_x_bd_filter_categoria"),
+    path("destacado_y_relac_x_bd/<int:nro>/", views.destacado_y_relacionados_por_nro_categoria, name="destacado_y_relacionados_por_nro_categoria"),
+    path("destacado_y_relac_x_bd/<str:string_categoria>/", views.destacado_y_relacionados_por_string_categoria, name="destacado_y_relacionados_por_string_categoria"),
 ]

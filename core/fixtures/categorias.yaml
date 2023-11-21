@@ -1,0 +1,8 @@
+- model: core.categoria
+  pk: 1
+  fields:
+    nombre: Auriculares
+- model: core.categoria
+  pk: 2
+  fields:
+    nombre: Videojuegos

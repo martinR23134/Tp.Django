@@ -78,10 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tpdjango',
-        'USER': 'admin',  # TU USUARIO
-        'PASSWORD': 'admin',  # TU PASSWORD
+        'USER': 'postgres',  # TU USUARIO
+        'PASSWORD': 'Fortin23',  # TU PASSWORD
         'HOST': 'localhost',
-        'PORT': ''
+        'PORT': '5432'
     }
 }
 
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ar'
 
 TIME_ZONE = 'UTC'
 
@@ -130,3 +130,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Settings para subir imagenes a django
+# Referencia: https://codinggear.blog/how-to-upload-images-in-django/
+#   MEDIA_ROOT is the path of the folder that stores the files that are uploaded by the users 
+#              of your Django website
+#   MEDIA_URL is the URL of the Django media files. Every media file should start with this part 
+#               of the URL and then be followed by the name of the file
+MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_URL = '/media/'

@@ -1,0 +1,103 @@
+# How to provide initial data for models
+# Provide data with fixtures
+# https://docs.djangoproject.com/en/4.2/howto/initial-data/
+#
+# Manejo de multiples lineas en YAML
+# https://yaml-multiline.info/
+#
+# template videojuegos.html
+#
+- model: core.stock_item
+  pk: 1
+  fields:
+    nombre: Gaming Headset Auricular Ps4 Audio Juego Y Chat Mic Gamer
+    foto: imgs/auriculares_1.jpg
+    categorias:
+      - 1
+      - 2
+    precio: 185.99
+    color: 'N'
+    descripcion: |
+      • Poseen tecnología Bluetooth para escuchar música cómodamente, sin cables.
+      • Sistema de Manos Libres con micrófono incorporado para llamadas.
+      • Cuenta con un moderno diseño, ajustable y confortable.
+      • Diseño plegable para almacenarlos y transportarlos fácilmente.
+      • Total libertad de movimiento y mayor comodidad, en tu hogar y en exteriores.
+    info_adicional: |
+      -Ofrecemos entrega inmediata en nuestro depósito en Paternal.
+      -Mercado Envíos, y Mercado Envíos Flex.
+      -Entrega Same Day en CABA y GBA comprando antes de las 13hs. 
+#   reseñas:
+#   productos_relacionados:
+- model: core.stock_item
+  pk: 2
+  fields:
+    nombre: Auriculares Bluetooth Noga Aris Bt409
+    foto: imgs/auriculares_2.jpg
+#    categorias: Auriculares
+    precio: 135.99
+#    color: 
+    descripcion:
+    info_adicional:
+#   reseñas:
+#   productos_relacionados:
+- model: core.stock_item
+  pk: 3
+  fields:
+    nombre: Auriculares Manos Libres Gadnic Inalambricos
+    foto: imgs/auriculares_3.jpg
+#    categorias: Auriculares
+    precio: 157.99
+#    color: 
+    descripcion:
+    info_adicional:
+#   reseñas:
+#   productos_relacionados:
+- model: core.stock_item
+  pk: 4
+  fields:
+    nombre: Auriculares gamer Kotion Each G9000 black
+    foto: imgs/auriculares_4.jpg
+#    categorias: Auriculares
+    precio: 186.99
+#    color: 
+    descripcion:
+    info_adicional:
+#   reseñas:
+#   productos_relacionados:
+- model: core.stock_item
+  pk: 5
+  fields:
+    nombre: Auriculares Bluetooth Headset Noga Aris Ng-918bt
+    foto: imgs/auriculares_5.jpg
+#    categorias: Auriculares
+    precio: 213.99
+#    color: 
+    descripcion:
+    info_adicional:
+#   reseñas:
+#   productos_relacionados:
+# - model: core.stock_item
+#   pk: 6
+#   fields:
+#     nombre: 
+#     foto: 
+#     categorias:
+#     precio:
+# #    color: 
+#     descripcion:
+#     info_adicional:
+# #   reseñas:
+# #   productos_relacionados:
+# - model: core.stock_item
+#   pk: 2
+#   fields:
+#     nombre: 
+#     foto: 
+#     categorias:
+#     precio:
+# #    color: 
+#     descripcion:
+#     info_adicional:
+# #   reseñas:
+# #   productos_relacionados:

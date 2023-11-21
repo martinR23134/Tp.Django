@@ -1,0 +1,137 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block titulo %} Productos2 {% endblock %}
+
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'core/css/E-commerce-Video-juegos.CSS' %}">
+{% endblock %}
+
+{% block content %}
+
+<section>
+
+    <div class="container-title">{{ cat.nombre }}</div>
+
+</section>
+    
+    <main>
+            <div class="container-img">
+                <img src={{ item_destacado.foto.url }} alt="Imagen producto">
+            </div>
+            <div class="container-info-producto">
+                <div class="container-price">
+                    <span>{{ item_destacado.precio }}</span>
+                    <i class="fa-solid fa-tag"></i>
+                </div>
+                <div class="container-detain-productos">
+                    <div class="foem-grup">
+                        <label for="colour">Color</label>
+                        {{ item_destacado.get_color_display }}
+                        {% comment %} <select name="color" id="colour">
+                            <option disabled selected value="">Elija una opción</option>
+                            {% for llave,valor in stock_item.COLORES %}
+                            <option value={{ llave }}>{{ valor }}</option>
+                            {% endfor %}
+                        </select> {% endcomment %}
+                    </div>
+                    {% comment %} <button type='reset' class="btn-clean">Limpiar</button> {% endcomment %}
+                </div>
+ 
+                <div class="container-add-cart">
+
+                    <div class="container-quantity">
+    
+                        <input type="number" 
+                        placeholder="1" 
+                        value="1" 
+                        min="1" 
+                        class="input-quantity"
+                        />
+    
+                        <div class="btn-increment-decrement">
+                            <i class="fa-solid fa-chevron-up" id="increment"></i>
+                            <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                        </div>
+                    </div>
+                    <button class="btn-add-to-cart">
+                        <i class="fa-solid fa-plus"></i>
+                        Añadir al carrito
+                    </button>
+                </div>
+                <div class="container-description">
+    
+                    <div class="title-description">
+    
+                        <h4>Descripción</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="text-description ">
+    
+                        <h3>{{ item_destacado.nombre }}</h3>
+                        <br>
+                        <p>
+                            {{ item_destacado.descripcion }}
+                        </p>
+                    </div>
+                </div>
+                <div class="container-addictional-information">
+                    <div class="title-additional-information">
+    
+                        <h4>Información adicional</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="text-addictional-information " >
+                        <p>
+                            {{ item_destacado.info_adicional }}
+                        </p>
+                    </div>
+                </div>
+                <div class="container-reviews">
+                    <div class="title-reviews">
+    
+                        <h4>Reseñas</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="text-reviews hidden">
+                        <p> ----------------
+                        </p>
+                    </div>
+                </div>
+                <div class="container-social">
+                    <span>Compartir</span>
+                    <div class="container-buttons-social">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        
+                    </div>
+                </div>
+            </div>    
+    </main>
+
+    <section class="container-related-products">
+        <h2>Productos Relacionados</h2>
+        <div class="card-list-products">
+            {% for stock_item in items_relacionados %}
+                    <div class="card">
+                        <div class="card-img">
+                            <img src={{ stock_item.foto.url }} alt="Producto-1">
+                        </div>
+                        <div class="info-card">
+                            <div class="text-product">
+                                <h3>{{ stock_item.nombre }}</h3>
+                                <p class="category">
+                                    {{ cat.nombre }}
+                                </p>
+                            </div>
+                            <div class="price">
+                                {{ stock_item.precio }}<i class="fa-solid fa-tag"></i>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

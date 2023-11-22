@@ -2,8 +2,12 @@ import json
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.http import HttpResponse
-from .models import Categoria, Stock_item, Destacado_por_categoria
+from django.http import HttpResponse, HttpResponseRedirect
+from django.views import View
+from .models import Categoria, Stock_item, Destacado_por_categoria, Resenia
+from .forms import ReseniaForm
+from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def login(request):
@@ -155,24 +159,6 @@ def videojuegos(request):
 def formulario_de_pago(request):
     return render(request, "core/formulario_de_pago.html")
 
-
-def videojuegos_x_bd(request):
-    contexto = None
-#    orm_handler = Stock_item.objects.all()
-    item_destacado = Stock_item.objects.filter(pk=1)
-    items_relacionados = Stock_item.objects.exclude(pk=1)
-    contexto = { "item_destacado": item_destacado, "items_relacionados": items_relacionados }
-    return render(request, "core/videojuegos_x_bd.html", context=contexto)
-
-def stockitem_x_bd_filter_categoria(request, string_categoria):
-    contexto = None
-#    item_destacado = Destacado_por_categoria.objects.filter(categoria=unacategoria, destacado=True)
-    item_destacado = Stock_item.objects.filter(categorias=unacategoria, destacado=True)
-    items_relacionados = Stock_item.objects.filter(categorias=unacategoria)
-#    items_relacionados = items_relacionados.exclude(item_destacado=True)
-    contexto = { "item_destacado": item_destacado, "items_relacionados": items_relacionados }
-    return render(request, "core/videojuegos_x_bd.html", context=contexto)
-
 def destacado_y_relacionados_por_nro_categoria(request, nro):
     contexto = None
     categoria_del_nro = Categoria.objects.get(pk=nro)  # Esto es un obj Categoria, salvo Exception
@@ -198,3 +184,43 @@ def destacado_y_relacionados_por_string_categoria(request, string_categoria):
                 "cat": categoria_del_string # categoria_del_string es un objeto Categoria
                 }
     return render(request, "core/destacado_y_relac_x_bd.html", context=contexto)
+
+# class ReseniaFormView(View):
+#     form_class = ReseniaForm
+#     initial = { 'texto':'',
+#                 'estrellas':'',
+#                 'emailcontacto':''  
+#               }
+#     template_name = 'core/formulario_resenia.html'
+#     def get(self, request):
+#         form = self.form_class(initial=self.initial)
+#         return render(request, self.template_name, {'form': form})
+#     def post(self, request):
+#         form = self.form_class(request.POST)
+#         if form.is_valid():
+#             form.save()            
+# #            string_categoria='Auriculares'
+# #            return HttpResponseRedirect(reverse('core:destacado_y_relac_x_bd', args=(string_categoria)))
+#             return HttpResponseRedirect(reverse('index'))
+#         return render(request, self.template_name, {'form': form})
+    
+class ReseniaFormView(LoginRequiredMixin, View):
+    login_url = '/admin/login/'
+#    redirect_field_name = 'redirect_to'
+    form_class = ReseniaForm
+    initial = { 'texto':'',
+                'estrellas':'',
+                'emailcontacto':''  
+              }
+    template_name = 'core/formulario_resenia.html'
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form': form})
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()            
+#            string_categoria='Auriculares'
+#            return HttpResponseRedirect(reverse('core:destacado_y_relac_x_bd', args=(string_categoria)))
+            return HttpResponseRedirect(reverse('index'))
+        return render(request, self.template_name, {'form': form})

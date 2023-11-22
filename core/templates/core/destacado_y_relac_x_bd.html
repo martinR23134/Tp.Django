@@ -27,13 +27,15 @@
                 <div class="container-detain-productos">
                     <div class="foem-grup">
                         <label for="colour">Color</label>
-                        {{ item_destacado.get_color_display }}
+                        {% comment %} {{ item_destacado.get_color_display }} {% endcomment %}
+                        {{ item_destacado.color }}
                         {% comment %} <select name="color" id="colour">
                             <option disabled selected value="">Elija una opción</option>
                             {% for llave,valor in stock_item.COLORES %}
                             <option value={{ llave }}>{{ valor }}</option>
                             {% endfor %}
                         </select> {% endcomment %}
+
                     </div>
                     {% comment %} <button type='reset' class="btn-clean">Limpiar</button> {% endcomment %}
                 </div>

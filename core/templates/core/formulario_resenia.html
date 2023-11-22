@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% comment %} <link rel="stylesheet" href="css/formulariodepago.css"> {% endcomment %}
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0cd4d38be2.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+</head>
+
+<body>
+
+    {% if user.is_authenticated %}
+	    <p>Bienvenido\a, {{ user.username }}.</p>
+        <div class="pago">
+            <form action="" method='post'>
+                {% csrf_token %}
+                <table>  {{ form.as_table }}  </table>
+                <input type="submit" value="Enviar" class="submit-btn">
+            </form>
+        </div> 
+    {% else %}
+	    <button type="button" class="btn btn-outline-primary me-2">Iniciar Sesión</button>
+    {% endif %}
+
+</body>
+</html>
+
+
+
+
+

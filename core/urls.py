@@ -5,8 +5,7 @@ from . import views
 urlpatterns = [
     path("", views.index, name="index"),
     path("computadoras/", views.computadoras, name="computadoras"),
-    path("computadoras/<int:computadora_id>",
-         views.computadoras, name="computadoras"),
+    path("computadoras/<int:computadora_id>", views.computadoras, name="computadoras"),
     path("cuidado_personal/", views.cuidado_personal, name="cuidado_personal"),
     path("deporte/", views.deporte, name="deporte"),
     path("electronico/", views.electronico, name="electronico"),
@@ -19,11 +18,9 @@ urlpatterns = [
     path("mascotas/", views.mascotas, name="mascotas"),
     path("repuestos_autos/", views.repuestos_autos, name="repuestos_autos"),
     path("videojuegos/", views.videojuegos, name="videojuegos"),
-    path("formulario_de_pago/", views.formulario_de_pago,
-         name="formulario_de_pago"),
+    path("formulario_de_pago/", views.formulario_de_pago, name="formulario_de_pago"),
     path("login/", views.login, name="login"),
-#    path("videojuegos_x_bd/", views.videojuegos_x_bd, name="videojuegos_x_bd"),
-#    path("videojuegos_x_bd/<int:unacategoria>/", views.stockitem_x_bd_filter_categoria, name="videojuegos_x_bd_filter_categoria"),
     path("destacado_y_relac_x_bd/<int:nro>/", views.destacado_y_relacionados_por_nro_categoria, name="destacado_y_relacionados_por_nro_categoria"),
     path("destacado_y_relac_x_bd/<str:string_categoria>/", views.destacado_y_relacionados_por_string_categoria, name="destacado_y_relacionados_por_string_categoria"),
+    path("formulario_resenia/", views.ReseniaFormView.as_view(), name="formulario_resenia"),
 ]

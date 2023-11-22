@@ -1,0 +1,13 @@
+- model: core.color
+  pk: 1
+  fields:
+    nombre: Blanco
+- model: core.color
+  pk: 2
+  fields:
+    nombre: Azul
+- model: core.color
+  pk: 3
+  fields:
+    nombre: Negro
+

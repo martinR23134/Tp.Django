@@ -16,7 +16,8 @@
       - 1
       - 2
     precio: 185.99
-    color: 'N'
+    # color: 'N'
+    color: 3
     descripcion: |
       • Poseen tecnología Bluetooth para escuchar música cómodamente, sin cables.
       • Sistema de Manos Libres con micrófono incorporado para llamadas.
@@ -32,13 +33,24 @@
 - model: core.stock_item
   pk: 2
   fields:
-    nombre: Auriculares Bluetooth Noga Aris Bt409
+    nombre: Auriculares Bluetooth Vincha Stromberg Tag Special Edition
     foto: imgs/auriculares_2.jpg
-#    categorias: Auriculares
+    categorias:
+      - 1
+      - 2
     precio: 135.99
-#    color: 
-    descripcion:
-    info_adicional:
+    color: 3
+    descripcion: |
+      • Conexión Bluetooth para mayor libertad de movimiento
+      • Diseño overear cómodo y seguro
+      • Micrófono incorporado para llamadas claras
+      • Calidad de sonido excepcional
+      • Adecuado para disfrutar de videojuegos
+      • Edición especial de la marca Stromberg
+    info_adicional: |
+      -Ofrecemos entrega inmediata en nuestro depósito en Paternal.
+      -Mercado Envíos, y Mercado Envíos Flex.
+      -Entrega Same Day en CABA y GBA comprando antes de las 13hs. 
 #   reseñas:
 #   productos_relacionados:
 - model: core.stock_item
@@ -46,9 +58,11 @@
   fields:
     nombre: Auriculares Manos Libres Gadnic Inalambricos
     foto: imgs/auriculares_3.jpg
-#    categorias: Auriculares
+    categorias:
+      - 1
+      - 2
     precio: 157.99
-#    color: 
+    color: 3
     descripcion:
     info_adicional:
 #   reseñas:
@@ -58,9 +72,11 @@
   fields:
     nombre: Auriculares gamer Kotion Each G9000 black
     foto: imgs/auriculares_4.jpg
-#    categorias: Auriculares
+    categorias:
+      - 1
+      - 2
     precio: 186.99
-#    color: 
+    color: 3
     descripcion:
     info_adicional:
 #   reseñas:
@@ -70,9 +86,11 @@
   fields:
     nombre: Auriculares Bluetooth Headset Noga Aris Ng-918bt
     foto: imgs/auriculares_5.jpg
-#    categorias: Auriculares
+    categorias:
+      - 1
+      - 2
     precio: 213.99
-#    color: 
+    color: 3
     descripcion:
     info_adicional:
 #   reseñas:

@@ -9,7 +9,7 @@
   fields:
     categoria: 2
     stock_item: 1
-    destacado: True
+    destacado: False
 - model: core.destacado_por_categoria
   pk: 3
   fields:
@@ -39,7 +39,7 @@
   fields:
     categoria: 2
     stock_item: 2
-    destacado: False
+    destacado: True
 - model: core.destacado_por_categoria
   pk: 8
   fields:
